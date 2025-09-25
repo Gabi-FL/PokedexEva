@@ -1,0 +1,19 @@
+#fondo{
+    background-color: green;
+}
+#contenedor{
+    width: 800px;
+    margin: auto;
+}
+h1{
+    text-align: center;
+}
+#foto{
+    display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#audio{
+    display: flex;
+  justify-content: center;
+}
