@@ -1,16 +1,55 @@
-const pokemon = "Leafeon";
-const statsList = document.getElementById("stats");
 
-fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-  .then((response) => response.json())
-  .then((data) => {
-    const stats = data.stats;
-    stats.forEach((stat) => {
-      const statLi = document.createElement("li");
-      statLi.textContent = `${stat.stat.name}: ${stat.base_stat}`;
-      statsList.appendChild(statLi);
-    });
-    const tipos = data.types;
-    tipos.forEach((tipo))
-  })
-  .catch((error) => console.error("Error al obtener los datos:", error));
+const statsList = document.getElementById("stats");
+const typeList = document.getElementById("type");
+const ruido = document.getElementById("ruido");
+const input = document.getElementById("pokemonInput");
+const btn = document.getElementById("buscarBtn");
+const imagen = document.getElementById("imagenPoke")
+const numero = document.getElementById("numero")
+
+const limpiar = () => {
+  statsList.innerHTML = "";
+}
+
+ btn.addEventListener("click", () => {
+  const pokemon = input.value.trim().toLowerCase()
+  limpiar();
+   fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+     .then((response) => response.json())
+     .then((data) => {
+       statsList.style.display = "none";
+       //declarar
+       const stats = data.stats;
+       const types = data.types;
+       const cries = data.cries.latest;
+       const image = data.sprites.front_default;
+       const id = data.id;
+       limpiar();
+       //Stats base
+       stats.forEach((stat) => {
+         const statLi = document.createElement("li");
+         statLi.textContent = `${stat.stat.name}: ${stat.base_stat}`;
+         statsList.appendChild(statLi);
+       });
+       //tipos
+
+       types.forEach((type) => {
+         const typeLi = document.createElement("li");
+         typeLi.textContent = `${type.type.name}`;
+         typeList.appendChild(typeLi);
+       });
+
+       //ruido
+       ruido.src = cries;
+
+       //imagen
+       imagen.src = image;
+
+       //nº pokedex
+      
+     })
+     .catch((error) => console.error("Error al obtener los datos:", error));
+ });
+
+
+

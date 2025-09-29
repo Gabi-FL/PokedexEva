@@ -1,8 +1,8 @@
 #fondo{
-    background-color: green;
+    ;
 }
 #contenedor{
-    width: 800px;
+    width: 1000px;
     margin: auto;
 }
 h1{
@@ -16,4 +16,8 @@ h1{
 #audio{
     display: flex;
   justify-content: center;
+}
+#buscador{
+  text-align: center;
+  margin-bottom: 50px;
 }
