@@ -17,7 +17,7 @@ const limpiar = () => {
    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
      .then((response) => response.json())
      .then((data) => {
-       statsList.style.display = "none";
+       //statsList.style.display = "none";
        //declarar
        const stats = data.stats;
        const types = data.types;
