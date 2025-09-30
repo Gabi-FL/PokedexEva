@@ -9,6 +9,7 @@ const numero = document.getElementById("numero")
 
 const limpiar = () => {
   statsList.innerHTML = "";
+  typeList.innerHTML = "";
 }
 
  btn.addEventListener("click", () => {
@@ -46,7 +47,7 @@ const limpiar = () => {
        imagen.src = image;
 
        //nº pokedex
-      
+       numero = id
      })
      .catch((error) => console.error("Error al obtener los datos:", error));
  });
