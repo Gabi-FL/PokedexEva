@@ -7,13 +7,13 @@
     </head>
     <body>
         <div id="fondo">
-        <div id="contenedor">
         <div id="mostrar">
+        <div id="parte1">
         <h1>POKEDEX</h1>
+
         <div id="buscador">
         <input type="text" id="pokemonInput" placeholder="Escribe un pokemon">
         <button id="buscarBtn">Buscar</button>
-        </div>
         </div>
             <div id="foto">
             <img id="imagenPoke" src="" width="300" height="300">
@@ -22,13 +22,16 @@
             <audio id="ruido" src=""controls>
             </audio>
             </div>
-            <h2>Tipos:</h2>
+        </div>
+            <div id="parte2">
+            <h2 class="color">Nº Pokedex:</h2>
+            <p class="color" id="numero"></p>
+            <h2 class="color">Tipos:</h2>
             <ul id="type">
             </ul>
-        <h2 id="numero">Nº Pokedex:</h2>
 
-            <h2>Stats:</h2>
-            <ul id="stats">
+            <h2 class="color">Stats:</h2>
+            <ul class="color" id="stats">
         </ul>
         <script src="index.js"></script>
         </div>
