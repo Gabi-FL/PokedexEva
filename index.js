@@ -6,17 +6,23 @@ const input = document.getElementById("pokemonInput");
 const btn = document.getElementById("buscarBtn");
 const imagen = document.getElementById("imagenPoke");
 const numero = document.getElementById("numero");
-const nombre = document.getElementById("nom")
+const nombre = document.getElementById("nom");
+const tituloNun = document.getElementById("TituloNumero");
+const tituloTip = document.getElementById("TituloTipos");
+const tituloStat = document.getElementById("TituloStats");
 
 const limpiar = () => {
   statsList.innerHTML = "";
   typeList.innerHTML = "";
   numero.innerHTML = "";
+  nombre.innerHTML = "";
+  tituloNun.innerHTML = "";
+  tituloTip.innerHTML = "";
+  tituloStat.innerHTML = "";
 }
 
  btn.addEventListener("click", () => {
   const pokemon = input.value.trim().toLowerCase()
-  const NomPokemon = input.value.trim().toUpperCase()
   limpiar();
    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
      .then((response) => response.json())
@@ -28,9 +34,15 @@ const limpiar = () => {
        const cries = data.cries.latest;
        const image = data.sprites.front_default;
        const id = data.id;
+       const NomPokemon = input.value.trim().toUpperCase()
        limpiar();
-       //nombre
+       //nombre Pokemon
        nombre.textContent = NomPokemon
+
+       //titulos
+       tituloNun.textContent = "Nº Pokedex: ";
+       tituloTip.textContent = "Tipos: ";
+       tituloStat.textContent = "Stats: ";
        //Stats base
        stats.forEach((stat) => {
          const statLi = document.createElement("li");
