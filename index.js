@@ -4,8 +4,9 @@ const typeList = document.getElementById("type");
 const ruido = document.getElementById("ruido");
 const input = document.getElementById("pokemonInput");
 const btn = document.getElementById("buscarBtn");
-const imagen = document.getElementById("imagenPoke")
-const numero = document.getElementById("numero")
+const imagen = document.getElementById("imagenPoke");
+const numero = document.getElementById("numero");
+const nombre = document.getElementById("nom")
 
 const limpiar = () => {
   statsList.innerHTML = "";
@@ -15,6 +16,7 @@ const limpiar = () => {
 
  btn.addEventListener("click", () => {
   const pokemon = input.value.trim().toLowerCase()
+  const NomPokemon = input.value.trim().toUpperCase()
   limpiar();
    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
      .then((response) => response.json())
@@ -27,6 +29,8 @@ const limpiar = () => {
        const image = data.sprites.front_default;
        const id = data.id;
        limpiar();
+       //nombre
+       nombre.textContent = NomPokemon
        //Stats base
        stats.forEach((stat) => {
          const statLi = document.createElement("li");
