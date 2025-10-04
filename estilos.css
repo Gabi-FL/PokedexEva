@@ -17,8 +17,8 @@ h1{
 }
 #mostrar{
   display: grid;
-  grid-template-columns: 4fr 1fr; /* parte1 ocupa el doble que parte2 */
-  gap: 20px; /* separación entre columnas */
+  grid-template-columns: 4fr 1fr; 
+  gap: 20px; 
   height: 100vh
 }
 #parte1{
@@ -31,9 +31,7 @@ h1{
   
 
 }
-#parte2{
 
-}
 
 
 
